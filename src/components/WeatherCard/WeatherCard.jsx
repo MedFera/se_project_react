@@ -3,18 +3,21 @@ import { useState, useEffect } from "react";
 
 
 
-const weatherOptions = {
-  "Clear_Day": "/images/weatherOptions/Clear_Day.svg",
-  "Clear_Night": "/images/weatherOptions/Clear_Night.svg",
-  "Clouds_Day": "/images/weatherOptions/Cloudy_Day.svg",
-  "Clouds_Night": "/images/weatherOptions/Cloudy_Night.svg",
-  "Fog_Day": "/images/weatherOptions/Fog_Day.svg",
-  "Fog_Night": "/images/weatherOptions/Fog_Night.svg",
-  "Rain_Day": "/images/weatherOptions/Rain_Day.svg",
-  "Rain_Night": "/images/weatherOptions/Rain_Night.svg",
-  "Snow_Day": "/images/weatherOptions/Snow_Day.svg",
-  "Snow_Night": "/images/weatherOptions/Snow_Night.svg",
+const base = import.meta.env.BASE_URL; // "/se_project_react/" in production
+
+export const weatherOptions = {
+  Clear_Day: `${base}images/weatherOptions/Clear_Day.svg`,
+  Clear_Night: `${base}images/weatherOptions/Clear_Night.svg`,
+  Clouds_Day: `${base}images/weatherOptions/Cloudy_Day.svg`,
+  Clouds_Night: `${base}images/weatherOptions/Cloudy_Night.svg`,
+  Fog_Day: `${base}images/weatherOptions/Fog_Day.svg`,
+  Fog_Night: `${base}images/weatherOptions/Fog_Night.svg`,
+  Rain_Day: `${base}images/weatherOptions/Rain_Day.svg`,
+  Rain_Night: `${base}images/weatherOptions/Rain_Night.svg`,
+  Snow_Day: `${base}images/weatherOptions/Snow_Day.svg`,
+  Snow_Night: `${base}images/weatherOptions/Snow_Night.svg`,
 };
+
 
 function WeatherCard({weatherObj}) {
   const [weather, setWeather] = useState("Clear_Day");

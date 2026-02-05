@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ModalWithForm.css";
+const base = import.meta.env.BASE_URL; // "/se_project_react/" in production
+
 
 function ModalWithForm({ isVisible, exitClick, addItemToArray }) {
   const [display, setDisplay] = useState("none");
@@ -65,7 +67,7 @@ function ModalWithForm({ isVisible, exitClick, addItemToArray }) {
       <div className="form-modal__container">
         <img
           className="item-modal__close-btn"
-          src="/images/close-btn-dark.svg"
+          src={`${base}images/close-btn-dark.svg`}
           alt="close button"
           onClick={exitClick}
         />

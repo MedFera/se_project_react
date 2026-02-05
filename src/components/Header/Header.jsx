@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Header.css";
-//DONT FORGET TO PUT IN LOCATION
-const location = "New York";
-const datetime = new Date().toLocaleString("default", {
-  month: "long",
-  day: "numeric",
-});
+
+const base = import.meta.env.BASE_URL; // "/se_project_react/" in production
 
 function Header({ addItemClick, weatherObj }) {
   const [location, setLocation] = useState("N/A");
@@ -24,7 +20,7 @@ function Header({ addItemClick, weatherObj }) {
       <div className="header__left">
         <img
           className="header__logo"
-          src="/images/logo.svg"
+          src={`${base}images/logo.svg`}
           alt="WTWR logo"
         />
         <div className="header__datetime">
@@ -39,7 +35,7 @@ function Header({ addItemClick, weatherObj }) {
         <div className="header__account-name">Terrence Tegegne</div>
         <img
           className="header__avatar"
-          src="/images/avatar.svg"
+          src={`${base}images/avatar.svg`}
           alt="User avatar"
         />
       </div>

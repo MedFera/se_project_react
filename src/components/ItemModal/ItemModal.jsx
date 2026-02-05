@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './ItemModal.css'
 
 
-
+const base = import.meta.env.BASE_URL; // "/se_project_react/" in production
 
 function ItemModal({isVisible, onClick, card}) {
   const [display, setDisplay] = useState("none");
@@ -26,7 +26,7 @@ function ItemModal({isVisible, onClick, card}) {
         onClick={handleClick}
       >
         <div className="item-modal__container">
-          <img className='item-modal__close-btn' src='/images/close-btn.svg' alt='close button' onClick={onClick}/>
+          <img className='item-modal__close-btn' src={`${base}images/close-btn.svg`} alt='close button' onClick={onClick}/>
           <div>
             <img className='item-modal__image' src={item?.link}/>
           <div className='item-modal__description'>
