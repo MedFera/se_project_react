@@ -1,0 +1,53 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  background-color: #f3f3f3;
+  align-items: center;
+  padding: 32px 40px 0px 40px;
+  color: black;
+  font-family: "CabinetGrotesk-Bold", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.header__left {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.header__logo {
+  width: 90px;
+  height: 40px;
+}
+.header__datetime {
+  margin-top: 11px;
+  margin-bottom: 5px;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__account-name {
+  margin-top: 6px;
+  margin-bottom: 9px;
+  margin-right: 88px;
+}
+
+.header__add-button {
+  margin-top: 6px;
+  margin-bottom: 9px;
+  margin-right: 20px;
+  padding: 0;
+  background-color: #f3f3f3;
+  border: #f3f3f3;
+  color: black;
+  font-family: "CabinetGrotesk-Bold", monospace;
+  line-height: 24px;
+  font-size: 20px;
+}

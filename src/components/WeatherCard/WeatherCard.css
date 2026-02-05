@@ -1,0 +1,27 @@
+.weather-card{
+    height: 80px;
+    margin: 28px 40px 40px 40px;
+}
+
+.weather-card_img{
+     background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+    color: white;
+    font-family: "CabinetGrotesk-Bold", monospace;
+    border-radius: 12px;
+    background-position: right;
+}
+
+.weather-card_temp{
+    margin: 0px;
+    color: white;
+    font-family: "CabinetGrotesk-Bold", monospace;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: 0;
+    padding: 20px 0px 20px 16px;
+    text-align: left;
+}
