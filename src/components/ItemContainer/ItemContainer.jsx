@@ -17,14 +17,13 @@ function ItemContainer({ clothingArray, weatherObj, onItemClick }) {
         setCondition("hot");
       }
     }
-    
   }, [weatherObj]);
 
   useEffect(() => {
     setFilteredItems(
       clothingArray.filter((item) => item.weather === condition),
     );
-  }, [clothingArray,condition]);
+  }, [clothingArray, condition]);
 
   return (
     <div className="item-container">

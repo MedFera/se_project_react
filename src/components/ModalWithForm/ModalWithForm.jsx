@@ -65,7 +65,7 @@ function ModalWithForm({ isVisible, exitClick, addItemToArray }) {
       <div className="form-modal__container">
         <img
           className="item-modal__close-btn"
-          src="src/assets/images/close-btn-dark.svg"
+          src="./src/assets/images/close-btn-dark.svg"
           alt="close button"
           onClick={exitClick}
         />
