@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./Header.css";
 
 const base = import.meta.env.BASE_URL; // "/se_project_react/" in production
-
+console.log(base)
 function Header({ addItemClick, weatherObj }) {
   const [location, setLocation] = useState("N/A");
   const [date, setDate] = useState("January 1");
