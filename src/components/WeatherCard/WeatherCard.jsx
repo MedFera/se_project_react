@@ -4,16 +4,16 @@ import { useState, useEffect } from "react";
 
 
 const weatherOptions = {
-  "Clear_Day": "./src/assets/images/weatherOptions/Clear_Day.svg",
-  "Clear_Night": "./src/assets/images/weatherOptions/Clear_Night.svg",
-  "Clouds_Day": "./src/assets/images/weatherOptions/Cloudy_Day.svg",
-  "Clouds_Night": "./src/assets/images/weatherOptions/Cloudy_Night.svg",
-  "Fog_Day": "./src/assets/images/weatherOptions/Fog_Day.svg",
-  "Fog_Night": "./src/assets/images/weatherOptions/Fog_Night.svg",
-  "Rain_Day": "./src/assets/images/weatherOptions/Rain_Day.svg",
-  "Rain_Night": "./src/assets/images/weatherOptions/Rain_Night.svg",
-  "Snow_Day": "./src/assets/images/weatherOptions/Snow_Day.svg",
-  "Snow_Night": "./src/assets/images/weatherOptions/Snow_Night.svg",
+  "Clear_Day": "/images/weatherOptions/Clear_Day.svg",
+  "Clear_Night": "/images/weatherOptions/Clear_Night.svg",
+  "Clouds_Day": "/images/weatherOptions/Cloudy_Day.svg",
+  "Clouds_Night": "/images/weatherOptions/Cloudy_Night.svg",
+  "Fog_Day": "/images/weatherOptions/Fog_Day.svg",
+  "Fog_Night": "/images/weatherOptions/Fog_Night.svg",
+  "Rain_Day": "/images/weatherOptions/Rain_Day.svg",
+  "Rain_Night": "/images/weatherOptions/Rain_Night.svg",
+  "Snow_Day": "/images/weatherOptions/Snow_Day.svg",
+  "Snow_Night": "/images/weatherOptions/Snow_Night.svg",
 };
 
 function WeatherCard({weatherObj}) {
