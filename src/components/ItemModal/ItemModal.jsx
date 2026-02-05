@@ -26,7 +26,7 @@ function ItemModal({isVisible, onClick, card}) {
         onClick={handleClick}
       >
         <div className="item-modal__container">
-          <img className='item-modal__close-btn' src='/src/assets/images/close-btn.svg' alt='close button' onClick={onClick}/>
+          <img className='item-modal__close-btn' src='src/assets/images/close-btn.svg' alt='close button' onClick={onClick}/>
           <div>
             <img className='item-modal__image' src={item?.link}/>
           <div className='item-modal__description'>

@@ -24,7 +24,7 @@ function Header({ addItemClick, weatherObj }) {
       <div className="header__left">
         <img
           className="header__logo"
-          src="/src/assets/images/logo.svg"
+          src="src/assets/images/logo.svg"
           alt="WTWR logo"
         />
         <div className="header__datetime">
@@ -39,7 +39,7 @@ function Header({ addItemClick, weatherObj }) {
         <div className="header__account-name">Terrence Tegegne</div>
         <img
           className="header__avatar"
-          src="/src/assets/images/avatar.svg"
+          src="src/assets/images/avatar.svg"
           alt="User avatar"
         />
       </div>
