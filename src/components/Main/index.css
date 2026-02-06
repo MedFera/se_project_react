@@ -28,10 +28,10 @@ html{
 
 @font-face {
   font-family: "CabinetGrotesk-Bold";
-  src: local("CabinetGrotesk-Bold"),url("./assets/fonts/CabinetGrotesk-Bold.otf") format("opentype");
+  src: local("CabinetGrotesk-Bold"),url("/src/assets/fonts/CabinetGrotesk-Bold.otf") format("opentype");
 }
 
 @font-face {
   font-family: "CabinetGrotesk-Medium";
-  src: local("CabinetGrotesk-Medium"),url("./assets/fonts/CabinetGrotesk-Medium.otf") format("opentype");
+  src: local("CabinetGrotesk-Medium"),url("/src/assets/fonts/CabinetGrotesk-Medium.otf") format("opentype");
 }

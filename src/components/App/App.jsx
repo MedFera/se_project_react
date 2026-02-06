@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
-import WeatherCard from './components/WeatherCard/WeatherCard'
-import { weatherApi } from './utils/weatherApi'
-import {defaultClothingItems} from "./utils/clothingItems"
-import ItemModal from './components/ItemModal/ItemModal'
-import ItemContainer from './components/ItemContainer/ItemContainer'
-import ModalWithForm from './components/ModalWithForm/ModalWithForm'
+import Header from '/src/components/Header/Header'
+import Footer from '../Footer/Footer'
+import WeatherCard from '../WeatherCard/WeatherCard'
+import { weatherApi } from '../../utils/weatherApi'
+import {defaultClothingItems} from "../../utils/clothingItems"
+import ItemModal from '../ItemModal/ItemModal'
+import ItemContainer from '../ItemContainer/ItemContainer'
+import ModalWithForm from '../ModalWithForm/ModalWithForm'
 
 const testMode = false;
  
