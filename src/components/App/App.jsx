@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import Header from '/src/components/Header/Header'
 import Footer from '../Footer/Footer'
-import WeatherCard from '../WeatherCard/WeatherCard'
+
 import { weatherApi } from '../../utils/weatherApi'
 import {defaultClothingItems} from "../../utils/clothingItems"
 import ItemModal from '../ItemModal/ItemModal'
-import ItemContainer from '../ItemContainer/ItemContainer'
+import Main from "/src/components/Main/Main"
 import ModalWithForm from '../ModalWithForm/ModalWithForm'
 
 const testMode = false;
@@ -77,8 +77,7 @@ function App() {
       <ItemModal isVisible={itemModalVisible} card={selectedCard} onClick={handleModalExit} ></ItemModal>
       <ModalWithForm isVisible={formModalVisible} exitClick={handleModalExit} addItemToArray={addItemToArray}></ModalWithForm>
       <Header addItemClick={handleAddItemClick} weatherObj={weatherObj}></Header>
-      <WeatherCard weatherObj={weatherObj}></WeatherCard>
-      <ItemContainer clothingArray = {clothingArray} weatherObj={weatherObj} onItemClick={handleItemClick}></ItemContainer>
+      <Main weatherObj={weatherObj} clothingArray = {clothingArray} onItemClick={handleItemClick}></Main>
       <Footer></Footer>
       {/* <button onClick={addTestItem}></button> */}
     </>
