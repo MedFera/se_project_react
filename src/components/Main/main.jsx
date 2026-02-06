@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './components/App/App.jsx'
-import './index.css'
-import './assets/fonts/CabinetGrotesk-Bold.otf'
-import './assets/fonts/CabinetGrotesk-Medium.otf'
+import App from '../App/App.jsx'
+import '../../index.css'
+import '../../assets/fonts/CabinetGrotesk-Bold.otf'
+import '../../assets/fonts/CabinetGrotesk-Medium.otf'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
