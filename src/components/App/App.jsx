@@ -1,87 +1,114 @@
-import { useEffect, useState } from 'react'
-import './App.css'
-import Header from '/src/components/Header/Header'
-import Footer from '../Footer/Footer'
+import { useEffect, useState } from "react";
+import "./App.css";
+import Header from "/src/components/Header/Header";
+import Footer from "../Footer/Footer";
 
-import { weatherApi } from '../../utils/weatherApi'
-import {defaultClothingItems} from "../../utils/clothingItems"
-import ItemModal from '../ItemModal/ItemModal'
-import Main from "/src/components/Main/Main"
-import ModalWithForm from '../ModalWithForm/ModalWithForm'
+import { WeatherApi } from "../../utils/WeatherApi";
+import { defaultClothingItems } from "../../utils/clothingItems";
+import ItemModal from "../ItemModal/ItemModal";
+import Main from "/src/components/Main/Main";
+import NewGarmentForm from "../NewGarmentForm/NewGarmentForm";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const testMode = false;
- 
 
 function App() {
-  const [weatherObj, setWeatherObj] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
   const [clothingArray, setClothingArray] = useState(defaultClothingItems);
-  const [itemModalVisible, setItemModalVisible] = useState(false)
-  const [formModalVisible, setFormModalVisible] = useState(false)
-  const [selectedCard, setSelectedCard] = useState(null)
+  const [itemModalVisible, setItemModalVisible] = useState(false);
+  const [formModalVisible, setFormModalVisible] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null);
+  const [garmFormValid, setGarmFormValid] = useState(false);
 
-  useEffect(()=>{
-    //console.log(weatherObj)
+  useEffect(() => {
+    //console.log(weatherData)
     //USE TEST MODE TO STOP USELESS API CALLS!
-    if (testMode) {return} 
-    const api = new weatherApi({
-        longitude: "-73.935242",
-        latitude: "40.730610"
-    })
-    api.getWeatherObj()
-    .then(data => {
-      setWeatherObj(data);
-    })
-    .catch(err => console.error(err))
-  },[])
+    if (testMode) {
+      return;
+    }
+    const api = new WeatherApi({
+      longitude: "-73.935242",
+      latitude: "40.730610",
+    });
+    api
+      .getWeatherObj()
+      .then((data) => {
+        setWeatherData(data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
-  const handleItemClick =(item)=>{
-    setSelectedCard(item)
-    setItemModalVisible(true)
-  }
+
+  const handleItemClick = (item) => {
+    setSelectedCard(item);
+    setItemModalVisible(true);
+  };
 
   const handleAddItemClick = () => {
-    setFormModalVisible(true)
-  }
+    setFormModalVisible(true);
+  };
 
-  const handleModalExit = () =>{
-    if (itemModalVisible){
-      setItemModalVisible(false)
+  const handleModalExit = () => {
+    if (itemModalVisible) {
+      setItemModalVisible(false);
+    } else if (formModalVisible) {
+      setFormModalVisible(false);
     }
-    else if(formModalVisible){
-      setFormModalVisible(false)
-    }
-    
-    
-  }
-  
-  const addItemToArray = (newItem) =>{
+  };
+
+  const addItemToArray = (newItem) => {
     const _nextId = clothingArray.length;
-    newItem._id = _nextId + 1
-    setClothingArray([...clothingArray, newItem])
-  }
+    newItem._id = _nextId + 1;
+    setClothingArray([...clothingArray, newItem]);
+  };
 
-  const addTestItem = () => {
-    setClothingArray(prev => [
-      ...prev,
-      {
-        _id: 99,
-        name: "TESTER",
-        weather: "warm",
-        link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09",
-      }
-    ]);
+  const handleGarmSubmit = (e) => {
+    const formData = new FormData(e.target);
+   
+    const data = {
+      name: formData.get("item-name"),
+      link: formData.get("item-url"),
+      weather: formData.get("item-weather"),
+    };
+
+    addItemToArray(data);
+    setGarmFormValid(false);
   };
 
   return (
     <>
-      <ItemModal isVisible={itemModalVisible} card={selectedCard} onClick={handleModalExit} ></ItemModal>
-      <ModalWithForm isVisible={formModalVisible} exitClick={handleModalExit} addItemToArray={addItemToArray}></ModalWithForm>
-      <Header addItemClick={handleAddItemClick} weatherObj={weatherObj}></Header>
-      <Main weatherObj={weatherObj} clothingArray = {clothingArray} onItemClick={handleItemClick}></Main>
+      <ItemModal
+        isVisible={itemModalVisible}
+        card={selectedCard}
+        onClick={handleModalExit}
+      ></ItemModal>
+      <ModalWithForm
+        isVisible={formModalVisible}
+        exitClick={handleModalExit}
+        title={"New Garment"}
+        formValid={garmFormValid}
+        onSubmit={handleGarmSubmit}
+        buttonText={"Add Garment"}
+        children={
+          <NewGarmentForm
+            formValid={garmFormValid}
+            setFormValid={setGarmFormValid}
+          ></NewGarmentForm>
+        }
+      ></ModalWithForm>
+      <Header
+        addItemClick={handleAddItemClick}
+        weatherData={weatherData}
+      ></Header>
+      <Main
+        weatherData={weatherData}
+        clothingArray={clothingArray}
+        onItemClick={handleItemClick}
+      ></Main>
       <Footer></Footer>
       {/* <button onClick={addTestItem}></button> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

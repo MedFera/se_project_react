@@ -19,7 +19,7 @@ export const weatherOptions = {
 };
 
 
-function WeatherCard({weatherObj}) {
+function WeatherCard({weatherData}) {
   const [weather, setWeather] = useState("Clear_Day");
   const [temperature, setTemperature] = useState(78);
 
@@ -27,11 +27,11 @@ function WeatherCard({weatherObj}) {
   function findWeather () {
     let weatherString = "";
     try {
-      let currentTime = weatherObj.dt;
-      let weatherType = weatherObj.weather[0].main;
-      let sunrise = weatherObj.sys.sunrise;
-      let sunset = weatherObj.sys.sunset;
-      let temp = weatherObj.main.temp;
+      let currentTime = weatherData.dt;
+      let weatherType = weatherData.weather[0].main;
+      let sunrise = weatherData.sys.sunrise;
+      let sunset = weatherData.sys.sunset;
+      let temp = weatherData.main.temp;
       weatherString += weatherType;
       if (currentTime > sunrise && currentTime < sunset){
         weatherString += "_Day"
@@ -49,9 +49,9 @@ function WeatherCard({weatherObj}) {
   };
 
   useEffect(()=>{
-    if (!weatherObj) return;
+    if (!weatherData) return;
     findWeather();
-  },[weatherObj])
+  },[weatherData])
 
   return (
     <div className="weather-card">

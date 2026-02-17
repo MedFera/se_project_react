@@ -3,12 +3,12 @@ import WeatherCard from '../WeatherCard/WeatherCard'
 import ItemContainer from '../ItemContainer/ItemContainer'
 
 
-function Main({clothingArray,weatherObj,onItemClick}) {
+function Main({clothingArray,weatherData,onItemClick}) {
 
   return (
     <>
-      <WeatherCard weatherObj={weatherObj}></WeatherCard>
-      <ItemContainer clothingArray = {clothingArray} weatherObj={weatherObj} onItemClick={onItemClick}></ItemContainer>
+      <WeatherCard weatherData={weatherData}></WeatherCard>
+      <ItemContainer clothingArray = {clothingArray} weatherData={weatherData} onItemClick={onItemClick}></ItemContainer>
     </>
   )
 }

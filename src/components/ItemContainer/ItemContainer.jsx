@@ -2,22 +2,22 @@ import ItemCard from "/src/components/ItemCard/ItemCard";
 import "./ItemContainer.css";
 import { useEffect, useState } from "react";
 
-function ItemContainer({ clothingArray, weatherObj, onItemClick }) {
+function ItemContainer({ clothingArray, weatherData, onItemClick }) {
   const [condition, setCondition] = useState("warm");
   const [filteredItems, setFilteredItems] = useState([]);
   useEffect(() => {
-    if (weatherObj) {
-      let temp = weatherObj.main.temp;
+    if (weatherData) {
+      let temp = weatherData.main.temp;
 
       if (temp < 66) {
         setCondition("cold");
-      } else if (66 < temp && temp < 86) {
+      } else if (66 <= temp && temp < 86) {
         setCondition("warm");
       } else {
         setCondition("hot");
       }
     }
-  }, [weatherObj]);
+  }, [weatherData]);
 
   useEffect(() => {
     setFilteredItems(
@@ -26,7 +26,7 @@ function ItemContainer({ clothingArray, weatherObj, onItemClick }) {
   }, [clothingArray, condition]);
 
   return (
-    <div className="item-container">
+    <ul className="item-container">
       {filteredItems.map((item) => {
         return (
           <ItemCard
@@ -36,7 +36,7 @@ function ItemContainer({ clothingArray, weatherObj, onItemClick }) {
           />
         );
       })}
-    </div>
+    </ul>
   );
 }
 

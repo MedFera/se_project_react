@@ -1,11 +1,15 @@
-import './Footer.css'
+import "./Footer.css";
 
 function Footer() {
   return (
-    <div className='footer'>
-        <div className='footer__name'>Medin Feratovic</div>
-        <div className='footer__year'>2026</div>
-    </div>
+    <footer className="footer">
+      <div className="footer__name">
+        <p>Medin Feratovic</p>
+      </div>
+      <div className="footer__year">
+        <p>2026</p>
+      </div>
+    </footer>
   );
 }
 

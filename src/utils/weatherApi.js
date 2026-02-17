@@ -11,7 +11,7 @@ function _checkResponse(res){
     }
 }
 
-class weatherApi {
+class WeatherApi {
     constructor(options){
         this.longitude = options.longitude;
         this.latitude = options.latitude
@@ -28,4 +28,4 @@ class weatherApi {
 }
 
 
-export {weatherApi}
+export {WeatherApi}

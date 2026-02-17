@@ -1,4 +1,4 @@
-.form-modal {
+.garment-modal {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
   left: 0;
@@ -11,7 +11,7 @@
     display .5s ease;
 }
 
-.form-modal__container {
+.garment-modal__container {
   font-family: "CabinetGrotesk-Bold", monospace;
   transform: translate(0, 25%);
   width: 500px;
@@ -23,31 +23,20 @@
   color: black;
 }
 
-.item-modal__close-btn {
-  position: absolute;
-  display: inline-block;
-  margin-left: auto;
-  right: 30px;
-  top: 22px;
-  z-index: 2;
-  width: 16px;
-  height: 16px;
-  color: rgba(0, 0, 0, 0.3);
-}
 
-.form-modal__title {
+.garment-modal__title {
   margin: 0;
   padding: 28px 28px 0px;
 }
 
-.form-modal__input {
+.garment-modal__input {
   display: flex;
   flex-direction: column;
   gap: 0px;
   padding: 24px 28px 0px;
 }
 
-.form-modal__input-txt {
+.garment-modal__input-txt {
   background-color: #ffffff;
   font-family: "CabinetGrotesk-Medium", monospace;
   color: rgba(0, 0, 0, 1);
@@ -58,12 +47,12 @@
   line-height: 20px;
 }
 
-.form-modal__input-txt:focus {
+.garment-modal__input-txt:focus {
   outline: none;
   background-color: #ffffff;
 }
 
-.form-modal__radio {
+.garment-modal__radio {
   color: black;
   font-weight: 700;
   font-size: 16px;
@@ -77,7 +66,7 @@
   
 }
 
-.form-modal__radio-btn:not(:checked) {
+.garment-modal__radio-btn:not(:checked) {
   appearance: none;
   margin-bottom: 0;
   width: 1em;
@@ -87,16 +76,16 @@
   background: rgba(0, 0, 0, 0);
 }
 
-.form-modal__radio-label{
+.garment-modal__radio-label{
     transition:
     opacity .5s ease;
 }
 
-.form-modal__radio-label:has(input:not(:checked)) {
+.garment-modal__radio-label:has(input:not(:checked)) {
   opacity: 50%;
 }
 
-.form-modal__radio-btn {
+.garment-modal__radio-btn {
  
   accent-color: black;
   margin: 0px 8px 0px 0px;
@@ -105,28 +94,3 @@
     background-color .5s ease;
 }
 
-.form-modal__submit-btn {
-  color: white;
-  font-family: "CabinetGrotesk-Medium", monospace;
-  margin: 28px 32px 36px;
-  width: 124px;
-  height: 36px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  border-radius: 4px;
-  border: none;
-  background-color: rgba(0, 0, 0, 1);
-  transition:
-    opacity .5s ease;
-}
-
-.form-modal__submit-btn:disabled {
-  opacity: 30%;
-  
-}
-
-.form-modal__submit-btn:not(:disabled):hover {
-  opacity: 60%;
-}

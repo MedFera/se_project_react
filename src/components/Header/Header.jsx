@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 import "./Header.css";
 
 const base = import.meta.env.BASE_URL; // "/se_project_react/" in production
-console.log(base)
-function Header({ addItemClick, weatherObj }) {
+
+function Header({ addItemClick, weatherData }) {
   const [location, setLocation] = useState("N/A");
   const [date, setDate] = useState("January 1");
   useEffect(() => {
-    if(weatherObj != null){
-      setLocation(weatherObj.name);
+    if(weatherData != null){
+      setLocation(weatherData.name);
       //Multply to get milliseconds
-      setDate(new Date(weatherObj.dt * 1000).toLocaleString("default", { month: "long", day: "numeric" }));
+      setDate(new Date(weatherData.dt * 1000).toLocaleString("default", { month: "long", day: "numeric" }));
     }
 
-  }, [weatherObj]);
+  }, [weatherData]);
 
   return (
     <div className="header">
